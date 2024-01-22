@@ -8,7 +8,7 @@ import { Pensamento } from './pensamento';
 })
 export class PensamentoComponent {
   @Input() pensamento: Pensamento = {
-    id: 0,
+    id: '',
     conteudo: "I love Angular",
     autoria: "Dev",
     modelo: "modelo3"
