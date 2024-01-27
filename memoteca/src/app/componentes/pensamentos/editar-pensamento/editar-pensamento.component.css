@@ -23,6 +23,20 @@
   padding: 2rem;
 }
 
+.mensagem__erro {
+  font-size: 12px;
+  margin-left: 5px;
+  color: red;
+  margin-top: -25px;
+  margin-bottom: 20px;
+}
+
+.botao__desabilitado {
+  margin: 5px;
+  margin-top: 70px;
+  width: 200px;
+}
+
 .editar-pensamentos form label {
   color: #154580;
   font-weight: bold;

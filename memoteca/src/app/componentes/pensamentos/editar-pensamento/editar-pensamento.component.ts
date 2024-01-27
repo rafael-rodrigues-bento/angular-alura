@@ -1,27 +1,25 @@
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+import { PensamentoService } from './../pensamento.service';
 import { Component, OnInit } from '@angular/core';
-import { PensamentoService } from '../pensamento.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-editar-pensamento',
   templateUrl: './editar-pensamento.component.html',
-  styleUrl: './editar-pensamento.component.css'
+  styleUrls: ['./editar-pensamento.component.css']
 })
 export class EditarPensamentoComponent implements OnInit {
 
-  constructor (
+  formulario!: FormGroup;
+
+  constructor(
     private service: PensamentoService,
     private router: Router,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder
-  ) {}
-
-  formulario!: FormGroup;
+  ) { }
 
   ngOnInit(): void {
-
-
     const id = this.route.snapshot.paramMap.get('id')
     this.service.buscarPorId(id!).subscribe((pensamento) => {
       this.formulario = this.formBuilder.group({
